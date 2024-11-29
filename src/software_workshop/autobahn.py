@@ -127,6 +127,9 @@ def calculate_traffic_length(coordinates):
     total_length = 0.0
     for i in range(len(coordinates) - 1):
         total_length += geodesic(coordinates.loc[i], coordinates.loc[i + 1]).kilometers
+
+
+
     return total_length
 
 
@@ -151,7 +154,7 @@ def map_plot(plotlist, on="aveg_speed"):
         ["green", "yellow", "red"], vmin=on_stats["min"], vmax=on_stats["max"]
     )
 
-    m = folium.Map(
+    m =   folium.Map(
         pd.concat([data[["long", "lat"]] for data in plotlist]).mean(), zoom_start=10
     )
     for df in plotlist:
