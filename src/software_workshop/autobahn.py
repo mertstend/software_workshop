@@ -107,6 +107,9 @@ class TrafficWarning:
                 "long": [coord[1] for coord in coordinates],
             }
         ).dropna()
+
+
+        
         return DF
 
 
