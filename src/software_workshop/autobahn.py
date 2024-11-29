@@ -101,13 +101,13 @@ class TrafficWarning:
         pandas.DataFrame
             A DataFrame containing the geographical coordinates.
         """
-        df = pd.DataFrame(
+        DF = pd.DataFrame(
             {
                 "lat": [coord[0] for coord in coordinates],
                 "long": [coord[1] for coord in coordinates],
             }
         ).dropna()
-        return df
+        return DF
 
 
 def calculate_traffic_length(coordinates):
